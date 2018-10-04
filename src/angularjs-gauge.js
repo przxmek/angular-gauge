@@ -99,7 +99,7 @@
                 });
 
                 var fs = this.options.labelOnly ? lfs * 0.8 : this.options.size / 13;
-                var lh = this.options.labelOnly ? llh : (5 * fs) + parseInt(this.options.size);
+                var lh = this.options.labelOnly ? llh : parseInt(this.options.size) / 2 + 2 * fs;
 
                 this.legend.css({
                     display: 'inline-block',
@@ -110,7 +110,7 @@
                     textOverflow: 'ellipsis',
                     fontWeight: 'normal',
                     fontSize: fs + 'px',
-                    lineHeight: lh + 'px'
+                    marginTop: lh + 'px'
                 });
             },
             create: function (nv, ov) {
