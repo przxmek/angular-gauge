@@ -100,17 +100,20 @@
 
                 var fs = this.options.labelOnly ? lfs * 0.8 : this.options.size / 13;
                 var lh = this.options.labelOnly ? llh : parseInt(this.options.size) / 2 + 2 * fs;
+                var width = this.options.type === 'semi' ? 100 : 70;
+                var leftMargin = this.options.type === 'semi' ? 0 : 15;
 
                 this.legend.css({
                     display: 'inline-block',
-                    width: '100%',
+                    width: width + '%',
                     position: 'absolute',
                     textAlign: 'center',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     fontWeight: 'normal',
                     fontSize: fs + 'px',
-                    marginTop: lh + 'px'
+                    marginTop: lh + 'px',
+                    marginLeft: leftMargin + '%'
                 });
             },
             create: function (nv, ov) {
