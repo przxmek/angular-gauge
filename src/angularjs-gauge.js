@@ -45,10 +45,11 @@
 
 
         var tpl = '<div style="display:inline-block;text-align:center;position:relative;">' +
-            '<span ng-show="{{!labelOnly}}"><u>{{prepend}}</u>' +
+            '<span ng-show="{{!labelOnly}}"><u ng-hide="value === null">{{prepend}}</u>' +
+            '<span ng-if="value === null">N/A</span>' +
             '<span ng-if="fractionSize === null">{{value | number}}</span>' +
             '<span ng-if="fractionSize !== null">{{value | number: fractionSize}}</span>' +
-            '<u>{{append}}</u></span>' +
+            '<u ng-hide="value === null">{{append}}</u></span>' +
             '<b>{{ label }}</b>' +
             '<canvas></canvas></div>';
 
